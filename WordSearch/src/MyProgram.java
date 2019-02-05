@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 public class MyProgram
-{
+{//hi
     @SuppressWarnings("resource")
 	public static void main(String[] args)
     {
