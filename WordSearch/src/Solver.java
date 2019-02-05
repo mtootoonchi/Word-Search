@@ -59,14 +59,14 @@ private void Check(int a, int b, String c)
 {
 	if(crossword[a][b].equals(c.substring(0,crossword[a][b].length())))
 	{
-		LeftChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		RightChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		UpChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		DownChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		LeftUpChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		RightUpChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		LeftDownChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
-		RightDownChecked[a][b]=new String(c.substring(0,crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(0,crossword[a][b].length());
+		RightChecked[a][b]=c.substring(0,crossword[a][b].length());
+		UpChecked[a][b]=c.substring(0,crossword[a][b].length());
+		DownChecked[a][b]=c.substring(0,crossword[a][b].length());
+		LeftUpChecked[a][b]=c.substring(0,crossword[a][b].length());
+		RightUpChecked[a][b]=c.substring(0,crossword[a][b].length());
+		LeftDownChecked[a][b]=c.substring(0,crossword[a][b].length());
+		RightDownChecked[a][b]=c.substring(0,crossword[a][b].length());
 		LeftCheck(a,b-1, c, crossword[a][b].length());
 		RightCheck(a,b+1,c,crossword[a][b].length());
 		UpCheck(a+1,b,c,crossword[a][b].length());
@@ -88,9 +88,9 @@ private void LeftCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -100,13 +100,13 @@ private void LeftCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a,b-1, c, d+crossword[a][b].length());
 	}
 }
@@ -120,9 +120,9 @@ private void RightCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -132,13 +132,13 @@ private void RightCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a,b+1, c, d+crossword[a][b].length());
 	}
 }
@@ -152,9 +152,9 @@ private void UpCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -164,13 +164,13 @@ private void UpCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a+1,b, c, d+crossword[a][b].length());
 	}
 }
@@ -185,9 +185,9 @@ private void DownCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -197,13 +197,13 @@ private void DownCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a-1,b, c, d+crossword[a][b].length());
 	}
 }
@@ -217,9 +217,9 @@ private void LeftUpCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -229,13 +229,13 @@ private void LeftUpCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a-1,b+1, c, d+crossword[a][b].length());
 	}
 }
@@ -249,9 +249,9 @@ private void RightUpCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -261,13 +261,13 @@ private void RightUpCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a+1,b+1, c, d+crossword[a][b].length());
 	}
 }
@@ -281,9 +281,9 @@ private void LeftDownCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -293,13 +293,13 @@ private void LeftDownCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a-1,b-1, c, d+crossword[a][b].length());
 	}
 }
@@ -313,9 +313,9 @@ private void RightDownCheck(int a, int b, String c, int d)
 	        {
 	        	if(solved[i][j].equals("-"))
 	        	{
-	        		solved[i][j]=new String(LeftChecked[i][j].toString());
+	        		solved[i][j]=LeftChecked[i][j];
 	        	}
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
@@ -325,13 +325,13 @@ private void RightDownCheck(int a, int b, String c, int d)
 	    {
 	        for(int j=0;j<LeftChecked[i].length;j++)
 	        {
-	            LeftChecked[i][j]=new String("-");
+	            LeftChecked[i][j]="-";
 	        }
 	    }
 	}
 	else
 	{
-		LeftChecked[a][b]=new String(c.substring(d,d+crossword[a][b].length()));
+		LeftChecked[a][b]=c.substring(d,d+crossword[a][b].length());
 		LeftCheck(a+1,b-1, c, d+crossword[a][b].length());
 	}
 }

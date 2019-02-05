@@ -52,14 +52,7 @@ public static int askInt(String str)
     scan.reset();
     prtln(str);
     prt("Choice: ");
-    return scan.nextInt();
-}
-public static double askDouble(String str)
-{
-    scan.reset();
-    prtln(str);
-    prt("Choice: ");
-    return scan.nextDouble();
+    return tryInt(scan.next());
 }
 public static String askString(String str)
 {
@@ -68,12 +61,17 @@ public static String askString(String str)
     prt("Choice: ");
     return scan.next();
 }
-public static boolean askBoolean(String str)
+public static int tryInt(String str)
 {
-    scan.reset();
-    prtln(str);
-    prt("Choice: ");
-    return isTrue(scan.next());
+	try 
+    { 
+        // checking valid integer using parseInt() method 
+        return Integer.parseInt(str); 
+    }  
+    catch (NumberFormatException e)  
+    { 
+    	return 0;
+    } 
 }
 public static boolean isTrue(String command)
 {

@@ -21,7 +21,7 @@ public class MyProgram
             Tools.prtln("What do you want to do?");
             Tools.prtln("Type \"1\" for Crossword Maker.");
             Tools.prtln("Type \"2\" for Crossword Solver.");
-            Tools.prtln("Type \"stop\" to stop.");
+            Tools.prtln("Enter anything else to stop.");
             Tools.prtln();
             Tools.prt("Choice: ");
             choice=scan.next();
@@ -29,6 +29,8 @@ public class MyProgram
             Tools.prtln();
             if(choice.equals("1")) // Crossword Maker
             {
+            	Tools.prtln("Not done yet.");
+            	/*
                 crossword=new String[Tools.askInt("How many rows do you want in your crossword?")][Tools.askInt("How many columns do you want in your crossword?")];
                 words=new ArrayList<>();
                 for(int i=1;i!=0;i++)
@@ -45,36 +47,43 @@ public class MyProgram
                     }
                     Tools.prtln();
                 }
-                
+                */
             }
             else if(choice.equals("2")) // Crossword Solver
             {
-                crossword=new String[Tools.askInt("How many rows are in your crossword?")][Tools.askInt("How many columns are in your crossword?")];
-                words=new ArrayList<>();
-                for(int i=0;i<crossword.length;i++)
+                crossword=new String[Tools.askInt("How many rows are in your crossword?\nEnter \"0\" or a non-number to exit.")][Tools.askInt("How many columns are in your crossword?\nEnter \"0\" or a non-number to exit.")];
+                if(crossword.length==0||crossword[0].length==0)
                 {
-                    for(int j=0;j<crossword[i].length;j++)
-                    {
-                        crossword[i][j]=new String(Tools.askString("What is your space for row "+(i+1)+" column "+(j+1)+" in your crossword?"));
-                    }
+                	Tools.prtln("Invalid choice or \"0.\"");
                 }
-                for(int i=1;i!=0;i++)
+                else
                 {
-                    word="";
-                    word=Tools.askString("What is your "+i+" word?\nEnter \"0\" to stop.");
-                    if(word.equals("0"))
+                	words=new ArrayList<>();
+                    for(int i=0;i<crossword.length;i++)
                     {
-                        i=-1;
+                        for(int j=0;j<crossword[i].length;j++)
+                        {
+                            crossword[i][j]=new String(Tools.askString("What is your space for row "+(i+1)+" column "+(j+1)+" in your crossword?"));
+                        }
                     }
-                    else
+                    for(int i=1;i!=0;i++)
                     {
-                        words.add(new String(word));
+                        word="";
+                        word=Tools.askString("What is your "+i+" word?\nEnter \"0\" to stop.");
+                        if(word.equals("0"))
+                        {
+                            i=-1;
+                        }
+                        else
+                        {
+                            words.add(new String(word));
+                        }
+                        Tools.prtln();
                     }
-                    Tools.prtln();
+                    Solver solved=new Solver(crossword, words);
+                    solved.Solve();
+                    solved.solved();
                 }
-                Solver solved=new Solver(crossword, words);
-                solved.Solve();
-                solved.solved();
             }
             else
             {
