@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Creater 
-{
+{//hi
 	private int frequencyRate;
 	//private int spaceMax;
 	private String[][] wordsearch=null;
