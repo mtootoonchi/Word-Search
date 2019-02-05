@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Solver
-{//hi
+{
     private String[][] crossword=null;
     private ArrayList<String> words=null;
     private String[][] solved=null;

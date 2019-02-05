@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Tools
-{//hi
+{
     private static Scanner scan=new Scanner(System.in);
     
 public Tools()
